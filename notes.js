@@ -1,4 +1,6 @@
 module.exports.addNote = () => {
   console.log('lol');
-  return 'lawl'
+  return 'lawl';
 }
+
+module.exports.add = (a, b) => {return a + b}

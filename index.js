@@ -2,7 +2,8 @@ const fs = require('fs');
 const os = require('os');
 const notes = require('./notes.js');
 
-let res = notes.addNote 
+let res = notes.add(1,2);
+console.log(res);
 
 // let user = os.userInfo();
 //
