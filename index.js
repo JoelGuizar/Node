@@ -4,14 +4,14 @@ const yargs = require('yargs');
 const _ = require('lodash');
 const notes = require('./notes.js');
 
-
+const argv = yargs.argv
 let command = process.argv[2];
 
-console.log(yargs);
+console.log('this is', yargs);
 
-if (command === "add") console.log('adding new note');
-if (command === "read") console.log('reading note');
-if (command === "remove") console.log('removing note');
+if (command === "add") notes.addNote(argv.title, argv.body);
+if (command === "read") notes.getAll();
+if (command === "remove") notes.remove();
 if (command === "list") {
   console.log('listing all notes')
 } else {
