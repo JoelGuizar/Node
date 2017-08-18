@@ -1,6 +1,9 @@
-module.exports.addNote = () => {
+
+const addNote = () => {
   console.log('lol');
   return 'lawl';
 }
 
-module.exports.add = (a, b) => {return a + b}
+module.exports = {
+  addNote: addNote
+}

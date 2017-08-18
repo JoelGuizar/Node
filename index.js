@@ -7,6 +7,8 @@ const notes = require('./notes.js');
 
 let command = process.argv[2];
 
+console.log(yargs);
+
 if (command === "add") console.log('adding new note');
 if (command === "read") console.log('reading note');
 if (command === "remove") console.log('removing note');
