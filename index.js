@@ -4,8 +4,8 @@ const yargs = require('yargs');
 const _ = require('lodash');
 const notes = require('./notes.js');
 
-const argv = yargs.argv
-let command = process.argv[2];
+const argv = yargs.argv;
+let command = argv._[0];
 
 //console.log('this is', yargs);
 
