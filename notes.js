@@ -7,12 +7,17 @@ const getAll = () => {
   console.log('getting all notes');
 };
 
-const remove = () => {
-  console.log('removing notes');
+const getNote = (title) => {
+  console.log('getting note', title);
+};
+
+const removeNote = (title) => {
+  console.log('removing note', title);
 }
 
 module.exports = {
   addNote,
   getAll,
-  remove
+  getNote,
+  removeNote
 }
