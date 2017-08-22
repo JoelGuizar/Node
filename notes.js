@@ -36,7 +36,7 @@ const addNote = (title, body) => {
 
 const getAll = () => {
   let notes = fetchNotes();
-  console.log(notes);
+  return notes;
 };
 
 const getNote = (title) => {

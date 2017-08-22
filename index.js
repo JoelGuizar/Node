@@ -4,10 +4,34 @@ const yargs = require('yargs');
 const _ = require('lodash');
 const notes = require('./notes.js');
 
-const argv = yargs.argv;
+  //the commands shown to be available.
+const argv = yargs
+  .command('add', 'Add a new note', {
+    title: {
+      describe: 'Title of note', //what's passed into
+      demand: true, //false by default, now if you run add command without title you will fail
+      alias: 't' //allows you to provide shortcut so you don't have to type '--', all you need is the flag and the alias '-t'
+    },
+    body: {
+      describe: 'Body of note',
+      demand: true,
+      alias: 'b'
+    }
+  })
+  .command('list', 'List all notes')
+  .command('read', 'Read a note', {
+    title: {
+      describe: 'Title of note',
+      demand: true,
+      alias: 't'
+    }
+  })
+  .command('remove', 'Remove a note')
+  .help() //sets up yargs to return info
+  .argv;
+
 let command = argv._[0];
 
-//console.log('this is', yargs);
 
 if (command === "add") notes.addNote(argv.title, argv.body) ? console.log('note added'): console.log('couldnt log note');
 if (command === "list") notes.getAll();
